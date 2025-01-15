@@ -8,7 +8,7 @@ import TransitionCard from "./ui/animations/home/transiton-cards";
 export default function Home() {
   return (
     <TransitionWrapper>
-      <div className="container mx-auto px-4 py-12 font-[family-name:var(--font-geist-sans)]">
+      <div className="container mx-auto px-4 py-2 md:py-4 font-[family-name:var(--font-geist-sans)]">
         <main className="px-4 mt-8">
           <div className="items-center gap-4">
             <h1 className="text-4xl font-bold text-center text-secondary">

@@ -8,8 +8,8 @@ export default function TransitionGithub() {
 
     return (
         <MotionImage
-            src="/img/icons/github-icon-dark.png"
-            alt="github-icon"
+            src="/img/icons/web-icon.png"
+            alt="web-icon"
             width={35}
             height={35}
             className="rounded-xl"

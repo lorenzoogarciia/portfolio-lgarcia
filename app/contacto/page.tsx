@@ -5,7 +5,7 @@ import ContactForm from "../ui/contact/contactForm"
 export default function Page() {
     return (
         <TransitionWrapper>
-            <div className="mx-auto flex flex-col py-8 md:py-16">
+            <div className="mx-auto flex flex-col py-8 md:py-12">
                 <main className="flex flex-col items-center gap-4">
                     <h1 className="text-secondary mb-8">¡No te cortes!😉</h1>
                     <TransitionForm>

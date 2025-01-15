@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Roboto, Ubuntu } from "next/font/google";
 import "./globals.css";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Header from "./ui/header";
 import Footer from "./ui/footer";
 
@@ -42,15 +43,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    
     <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${roboto.variable} ${ubuntu.variable} flex flex-col min-h-screen overflow-x-hidden`}
       >
-        <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
+
+          <Header />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
+          <SpeedInsights />
       </body>
     </html>
   );

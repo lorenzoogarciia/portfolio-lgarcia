@@ -13,7 +13,7 @@ export default function AnimatedTitle() {
                 `<span style="font-family: 'Geist Mono', serif">Dev Mobile</span>`,
                 `<span style="font-family: 'Roboto'">Web Designer</span>`,
             ],
-            typeSpeed: 40,
+            typeSpeed: 60,
             backSpeed: 40,
             startDelay: 800,
             backDelay: 1000,

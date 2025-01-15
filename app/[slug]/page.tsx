@@ -7,6 +7,7 @@ import TransitionTitle from "../ui/animations/slug/transition-title"
 import TransitionImage from "../ui/animations/slug/transition-image"
 import TransitionTechnology from "../ui/animations/slug/transition-technology"
 import TransitionGithub from "../ui/animations/slug/transition-github"
+import TransitionWeb from "../ui/animations/slug/transition-web"
 
 export async function generateStaticParams() {
     return projects.map((project) => ({
@@ -51,12 +52,7 @@ export default async function Page({ params }: ProjectPageProps) {
                                         rel="noopener noreferrer"
                                         className="transition-transform duration-300 ease-in-out hover:scale-110 flex flex-col items-center gap-2"
                                     >
-                                        <Image 
-                                            src="/img/icons/web-icon.png"
-                                            alt="web-icon"
-                                            width={35}
-                                            height={35}
-                                            className="rounded-xl"/>
+                                        <TransitionWeb />
                                     </Link>
                                 </div>
                             )}

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 export default function TransitionImage(project: {imageURL: string | null, slug: string | null}) {
-    const MotionImage = motion(Image)
+    const MotionImage = motion.create(Image)
 
     return (
         <MotionImage

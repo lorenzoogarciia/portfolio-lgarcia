@@ -16,7 +16,7 @@ export default function TransitionWrapper({
                 animate={{ opacity: 1, x: 0, y: 0 }}
                 exit={{ opacity: 0, x: -50, y: -50 }}
                 transition={{ duration: 0.8 }}
-                style={{ overflowX: "hidden" }}
+                style={{ overflowX: "hidden", overflowY: "hidden" }}
             >
                 {children}
             </motion.div>
