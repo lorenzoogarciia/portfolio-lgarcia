@@ -27,7 +27,8 @@ const roboto = Roboto({
 
 const ubuntu = Ubuntu({
   variable: "--font-ubuntu",
-  weight: "700"
+  weight: "700",
+  subsets: ["latin"],
 })
 
 export const metadata: Metadata = {
