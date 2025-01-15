@@ -5,17 +5,74 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-background: linear-gradient(
+    135deg,
+    rgb(22,45,138),
+    rgb(20,20,50)
+  );
+  --color-foreground: 30, 30, 30;
+  --color-primary: 22, 45, 138;
+  --color-secondary: 210, 255, 251;
+  --color-accent: 22, 45, 138;
+  --color-muted: 200, 200, 200;
+  --color-secondarygradient: linear-gradient(
+      180deg,
+      rgb(210, 255, 251),
+      rgb(190, 200, 210)
+    );
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --color-background: linear-gradient(
+      135deg,
+      rgb(22, 45, 138),
+      rgb(20, 20, 50)
+    );
+    --color-primary: 22, 45, 138;
+    --color-secondary: 210, 255, 251;
+    --color-accent: 22,45, 138;
+    --color-muted: 100, 100, 100;
+    --color-secondarygradient: linear-gradient(
+      135deg,
+      rgb(210, 255, 251),
+      rgb(190, 200, 210)
+    );
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: rgb(var(--color-foreground));
+  background: var(--color-background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold mb-2;
+  }
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  a {
+    @apply text-secondary hover:text-accent transition-colors;
+  }
+}
+
+@layer utilities {
+  .bg-secondary-gradient {
+    background: var(--color-secondarygradient)
+  }
+}
+.typed-cursor {
+  color: inherit; /* Toma el color del texto */
+  animation: blink 0.8s steps(2, start) infinite;
 }
