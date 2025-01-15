@@ -2,6 +2,7 @@
 
 import { z } from "zod";
 import { revalidatePath } from "next/cache";
+import { SendEmail } from "./services/mailjet";
 
 //Esquema de validación del formulario
 const FormSchema = z.object({
@@ -47,10 +48,26 @@ export async function sendMail(prevState: State, formData: FormData) {
     }
 
     const { name, email, phone, message } = validateFields.data;
-    console.log(`Enviando formulario: ${name}, ${email}, ${phone} , ${message}`)
 
-    revalidatePath("/contacto")
-    return {message: "Formulario enviado correctamente"}
+    try {
+        const response = await SendEmail({name, email, phone, message})
 
-    
+        const result = response
+
+        if (result) {
+            revalidatePath("/contacto")
+            return {message: "Formulario enviado correctamente"}
+        } else {
+            return {
+                errors: { message: ["Error al enviar el correo"] },
+                message: "Hubo un error inesperado al enviar el correo"
+            }
+        }
+    } catch (error) {
+        console.error("Error al enviar el correo: ", error)
+        return ({
+            errors: { message: ["Error al enviar el correo"] },
+            message: "Hubo un error inesperado al enviar el correo"
+        })
+    }
 }
