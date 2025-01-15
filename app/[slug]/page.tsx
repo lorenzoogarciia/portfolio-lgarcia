@@ -8,15 +8,22 @@ import TransitionImage from "../ui/animations/slug/transition-image"
 import TransitionTechnology from "../ui/animations/slug/transition-technology"
 import TransitionGithub from "../ui/animations/slug/transition-github"
 
-interface ProjectProps{
-    params: {
-        slug: string
-    }
-
+export async function generateStaticParams() {
+    return projects.map((project) => ({
+        params: {
+            slug: project.slug
+        }
+    }))
 }
 
-export default function Page({params}: ProjectProps ) {
-    const project = projects.find((p) => p.slug === params.slug) 
+interface ProjectPageProps {
+    params: Promise<{ slug: string }>
+}
+
+export default async function Page({ params }: ProjectPageProps) {
+    const { slug } = await params
+    const project =  projects.find((p) => p.slug === slug) 
+    if(!project) return <h1>404 Proyecto no encontrado</h1>
     return (
         <TransitionProject>
             <div className="mx-auto md:max-w-[800px] max-w-[80%] bg-secondary rounded-xl px-4 py-4 mt-12">
@@ -63,7 +70,7 @@ export default function Page({params}: ProjectProps ) {
                     </TransitionParagraph>
                     <div className="flex flex-row gap-4 pt-4 mt-4">
                         {project?.technologies.map((tech) => (
-                            <TransitionTechnology key={tech.name} className="transition-transform duration-300 ease-in-out hover:scale-110">
+                            <TransitionTechnology key={tech.name}>
                                 <Link
                                     key={tech.name}
                                     href={tech.docURL}
