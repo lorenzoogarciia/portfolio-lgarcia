@@ -1,8 +1,8 @@
 'use server'
 
 import { z } from "zod";
-import { revalidatePath } from "next/cache";
 import { SendEmail } from "./services/mailjet";
+import { revalidatePath } from "next/cache";
 
 //Esquema de validación del formulario
 const FormSchema = z.object({

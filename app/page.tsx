@@ -4,6 +4,7 @@ import Link from 'next/link'
 import  TransitionWrapper  from './ui/animations/transition-wrapper';
 import AnimatedTitle from "./ui/animations/home/transition-title";
 import TransitionCard from "./ui/animations/home/transiton-cards";
+import TransitionWelcome from "./ui/animations/home/transition-welcome";
 
 export default function Home() {
   return (
@@ -22,16 +23,11 @@ export default function Home() {
             <div className="flex flex-row items-center justify-center text-center text-4xl text-secondary gap-2 mb-4 md:min-h-[50px] min-h-[110px]">
                 <AnimatedTitle />
               </div>
-            <div className="text-center bg-secondary rounded-xl mt-8 p-4">
-              <span className="text-accent text-wrap text-xl font-bold">
-                Bienvenido a mi portafolio personal, ¡es un placer tenerte por aquí!<br/>
-                Si eres un apasionado por la programación déjame decirte que estás en el lugar correcto. <br />
-                Aquí podrás encontrar mis proyectos más recientes e importantes, así como información sobre programación. <br />
-              </span>
+            <div className="text-center font-mono rounded-xl p-4">
+              <TransitionWelcome />
             </div>
             <h2 className="text-center text-secondary items-center mt-8">¡Revisa mis últimos proyectos!</h2>
           </div>
-          
           <div className="flex flex-row flex-wrap gap-4 mt-8 justify-center items-center">
             {projects.slice(0,3).map((project) => (
               <TransitionCard key={project.slug}>

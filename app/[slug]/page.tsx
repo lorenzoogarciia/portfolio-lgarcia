@@ -24,7 +24,12 @@ interface ProjectPageProps {
 export default async function Page({ params }: ProjectPageProps) {
     const { slug } = await params
     const project =  projects.find((p) => p.slug === slug) 
-    if(!project) return <h1>404 Proyecto no encontrado</h1>
+    if(!project) return (
+        <div className="mx-auto flex flex-col items-center gap-2 py-8 md:py-12">
+            <h1 className="text-red-600 font-bold">Error 404</h1>
+            <h3 className="text-red-600 font-bold">Proyecto: {slug} no encontrado</h3>
+        </div>
+    ) 
     return (
         <TransitionProject>
             <div className="mx-auto md:max-w-[800px] max-w-[80%] bg-secondary rounded-xl px-4 py-4 mt-12">

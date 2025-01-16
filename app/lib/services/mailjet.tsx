@@ -22,7 +22,7 @@ export async function SendEmail({name, email, phone, message}: {name: string, em
                     ],
                     Subject: `Nuevo mensaje de ${name}`,
                     TextPart: `Nombre: ${name}\nCorreo: ${email}\nTeléfono: ${phone}\nMensaje: ${message}`,
-                    HTMLPart: `<h1>Nombre: ${name}</h3><br/><h2>Correo: ${email}</h3><br/><h3>Teléfono: ${phone}</h3><br/><p>Mensaje: ${message}</h3>`
+                    HTMLPart: `<h1>Nombre: ${name}</h3><br/><h2>Correo: ${email}</h3><br/><h3>Teléfono: ${phone}</h3><br/><p>Mensaje: ${message}</p>`
                 }
             ]
         })
