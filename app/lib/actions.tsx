@@ -21,7 +21,7 @@ const FormSchema = z.object({
 })
 
 export type State = {
-    message: string,
+    consoleMessage: string,
     errors: {
         name?: string[];
         email?: string[];
@@ -44,7 +44,7 @@ export async function sendMail(state: State, payload: FormData): Promise<State> 
     if (!validateFields.success) {
         return {
             errors: validateFields.error.flatten().fieldErrors,
-            message: "Error al enviar el formulario",
+            consoleMessage: "Error al enviar el formulario",
         }
     }
 
@@ -53,19 +53,19 @@ export async function sendMail(state: State, payload: FormData): Promise<State> 
         const response = await SendEmail({name, email, phone, message})
 
         if (response) {
-            return {message: "Formulario enviado correctamente", errors: {}, submissionId: uuidv4()}
+            return {consoleMessage: "Formulario enviado correctamente", errors: {}, submissionId: uuidv4()}
         } else {
             return {
-                errors: { message: ["Error al enviar el correo"] },
-                message: "Hubo un error inesperado al enviar el correo",
+                errors: {},
+                consoleMessage: "Hubo un error inesperado al enviar el correo",
                 submissionId: uuidv4()
             }
         }
     } catch (error) {
         console.error("Error al enviar el correo: ", error)
         return ({
-            errors: { message: ["Error al enviar el correo"] },
-            message: "Hubo un error inesperado al enviar el correo",
+            errors: {},
+            consoleMessage: "Hubo un error inesperado al enviar el correo",
             submissionId: uuidv4()
         })
     }

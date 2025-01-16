@@ -19,6 +19,14 @@ export default function Page() {
         }, 3000)        
     }
 
+    const handleErrorNotification = (msg: string) => {
+        setFunctionMessage(msg)
+        setShowNotification(true)
+        setTimeout(() => {
+            setShowNotification(false)
+        }, 3000)        
+    }
+
     useEffect(() => {
         if (functionMessage === 'Formulario enviado correctamente') {
             setNotificationMessage('¡Solicitud enviada!')
@@ -33,13 +41,13 @@ export default function Page() {
                 <main className="flex flex-col items-center gap-4">
                     <h1 className="text-secondary mb-8">¡No te cortes!😉</h1>
                     <TransitionForm>
-                        <div className="md:min-w-[600px] bg-secondary rounded-xl">
-                            <ContactForm onSucces={handleSuccesNotification}/>
+                        <div className="md:min-w-[600px] flex flex-col">
+                            <ContactForm onSucces={handleSuccesNotification} onFail={handleErrorNotification}/>
                         </div>
                     </TransitionForm>
                         {showNotification && (
                              <TransitionNotify>
-                                <div className={`flex flex-col mx-auto ${notificationMessage === '¡Solicitud enviada!' ? 'bg-green-400 text-accent shadow-current' : 'bg-red-500 text-white shadow-current'} p-4 rounded-xl shadow-xl`}>
+                                <div className={`flex flex-col mx-auto ${notificationMessage === '¡Solicitud enviada!' ? 'bg-green-400 text-accent shadow-current border-accent border-2' : 'bg-red-500 text-white border-accent border-2 shadow-accent'} p-4 rounded-xl shadow-lg`}>
                                     <p className="text-lg font-bold">{notificationMessage}</p>
                                 </div>
                             </TransitionNotify>

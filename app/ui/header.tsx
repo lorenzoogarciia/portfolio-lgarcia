@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import TransitionMobileMenu from './animations/transition-mobile-menu';
+import TransitionButtonHeader from './animations/transition-button-header';
 
 
  const navItems = [
@@ -37,12 +38,14 @@ export default function Header() {
                     </button>
                     <nav className='hidden sm:flex space-x-4 font-bold'>
                         {navItems.map((item) => (
-                            <Link 
-                            key={item.href}
-                            href={item.href}
-                            className={`hover:text-accent hover:font-bold font-bold transition ease-in-out duration-200 ${pathname === item.href ? 'text-accent bg-secondary' : ''} text-xl hover:bg-secondary hover:scale-110 p-3 rounded-xl`}>
-                                {item.label}
-                            </Link>
+                            <TransitionButtonHeader key={item.href}>
+                                <Link 
+                                key={item.href}
+                                href={item.href}
+                                className={`hover:text-accent font-bold ${pathname === item.href ? 'text-accent bg-secondary' : ''} text-xl hover:bg-secondary p-3 rounded-xl`}>
+                                    {item.label}
+                                </Link>
+                            </TransitionButtonHeader>
                         ))}
                     </nav>
                 </div>
@@ -51,15 +54,17 @@ export default function Header() {
                     <nav className="sm:hidden bg-background px-4 pb-4">
                         <ul className="flex flex-col items-center mx-auto gap-2 mt-2 font-bold">
                             {navItems.map((item) => (
-                            <li key={item.href}>
-                                <Link
-                                href={item.href}
-                                className="block p-2 hover:bg-secondary rounded-xl text-xl transition ease-in-out duration-200 hover:scale-105"
-                                onClick={() => setIsOpen(false)}
-                                >
-                                {item.label}
-                                </Link>
+                            <TransitionButtonHeader key={item.href}>
+                            <li> 
+                                    <Link
+                                    href={item.href}
+                                    className="block p-2 hover:bg-secondary rounded-xl text-xl"
+                                    onClick={() => setIsOpen(false)}
+                                    >
+                                    {item.label}
+                                    </Link>
                             </li>
+                            </TransitionButtonHeader>
                             ))}
                         </ul>
                     </nav>
