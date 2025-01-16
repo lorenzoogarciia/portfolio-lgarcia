@@ -69,7 +69,7 @@ export const projects: ProjectData[] = [
         status: "Finalizado"
     },
     {
-        title: "Nutrigest PRO",
+        title: "Nutrigest",
         description: "Nutrigest PRO es la versión actualizada de Nutrigest, mucho más profunda y profesional, pensada para ser multiplataforma, con un backend creado en SpringBoot y un frontend creado con NextJS para la versión web y React Native para su versión móvil.",
         author: "Lorenzo Garcia Garcia",
         imageURL: `/img/nutricion.jpg`,
@@ -101,7 +101,7 @@ export const projects: ProjectData[] = [
         status: "En desarrollo"
     },
     {
-        title: "Nutrigest",
+        title: "Nutrigest (Versión antigua)",
         description: "Nutrigest fue un proyecto realizado para la gestión de pacientes en tiempo real para un amigo nutricionista, creada con Kotlin y utilizando Firebase como backend."
         + " La aplicación permite la creación de pacientes, la creación de dietas y la visualización de las mismas.",
         author: "Lorenzo Garcia Garcia",
