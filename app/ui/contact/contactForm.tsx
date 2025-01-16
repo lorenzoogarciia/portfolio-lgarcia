@@ -90,7 +90,7 @@ export default function ContactForm({onSucces, onFail}: Props) {
                     <div className="flex flex-col justify-center py-5">
                         <button
                             type="submit"
-                            className="rounded-full mx-auto md:mx-52 bg-secondary text-accent p-4 text-xl font-ubuntu hover:bg-accent hover:text-secondary hover:shadow-xl shadow-black border-secondary border-2"
+                            className="rounded-full mx-auto md:mx-52 bg-accent text-secondary p-4 text-xl font-ubuntu hover:bg-secondary hover:text-accent hover:font-bold hover:shadow-xl hover:border-accent shadow-black border-secondary border-2"
                         >
                             {"¡Enviar!"}
                         </button>

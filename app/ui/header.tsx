@@ -19,7 +19,7 @@ export default function Header() {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <header className='bg-background text-foreground sticky top-0 z-20 backdrop:filter backdrop-blur-xl'>
+        <header className='max-w-full bg-background text-foreground sticky top-0 z-20 backdrop:filter backdrop-blur-xl'>
             <div className='container mx-auto px-4 border-b-2'>
                 <div className='flex flex-col sm:flex-row items-center justify-between py-4'>
                     <Link href="/" className='text-2xl font-bold mb-4 sm:mb-0 hover:text-accent hover:bg-secondary hover:rounded-xl rounded-xl delay-75 p-3 transition-colors'>
@@ -34,15 +34,13 @@ export default function Header() {
                             width={25}
                             height={25}
                         />
-                            <path d="M4 6h16M4 12h16M4 18h16" />
                     </button>
                     <nav className='hidden sm:flex space-x-4 font-bold'>
                         {navItems.map((item) => (
                             <TransitionButtonHeader key={item.href}>
                                 <Link 
-                                key={item.href}
                                 href={item.href}
-                                className={`hover:text-accent font-bold ${pathname === item.href ? 'text-accent bg-secondary' : ''} text-xl hover:bg-secondary p-3 rounded-xl`}>
+                                className={`transition-colors hover:text-accent ${pathname === item.href ? 'text-accent bg-secondary' : ''} text-xl hover:bg-secondary p-3 border-x-2 border-secondary`}>
                                     {item.label}
                                 </Link>
                             </TransitionButtonHeader>

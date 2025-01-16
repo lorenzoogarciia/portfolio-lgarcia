@@ -11,7 +11,6 @@ export default function TransitionButtonHeader({children}: {children: ReactNode}
                 key={pathname}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.8 }}
-                transition={{ stiffness: 100, damping: 100 }}
             >
                 {children}
             </motion.div>
