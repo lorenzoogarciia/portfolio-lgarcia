@@ -4,28 +4,28 @@ import TransitionForm from "../ui/animations/contact/transition-form"
 import TransitionNotify from "../ui/animations/contact/transition-notify"
 import TransitionWrapper from "../ui/animations/transition-wrapper"
 import ContactForm from "../ui/contact/contactForm"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useState } from "react"
 
 export default function Page() {
     const [showNotification, setShowNotification] = useState(false)
+    const [functionMessage, setFunctionMessage] = useState("")
     const [notificationMessage, setNotificationMessage] = useState("")
-    const timeoutRef = useRef<number | null>(null)
 
     const handleSuccesNotification = (msg: string) => {
-        setNotificationMessage(msg)
+        setFunctionMessage(msg)
         setShowNotification(true)
-        timeoutRef.current = window.setTimeout(() => {
+        setTimeout(() => {
             setShowNotification(false)
         }, 3000)        
     }
 
     useEffect(() => {
-        return () => {
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current)
-            }
+        if (functionMessage === 'Formulario enviado correctamente') {
+            setNotificationMessage('¡Solicitud enviada!')
+        } else {
+            setNotificationMessage('Error al enviar solicitud')
         }
-    }, [])
+    }, [functionMessage])
 
     return (
         <TransitionWrapper>
@@ -38,9 +38,9 @@ export default function Page() {
                         </div>
                     </TransitionForm>
                         {showNotification && (
-                            <TransitionNotify>
-                                <div className="flex flex-col mx-auto bg-green-400 p-4 rounded-xl shadow-xl shadow-current">
-                                    <p className="text-accent text-lg font-bold">{notificationMessage}</p>
+                             <TransitionNotify>
+                                <div className={`flex flex-col mx-auto ${notificationMessage === '¡Solicitud enviada!' ? 'bg-green-400 text-accent shadow-current' : 'bg-red-500 text-white shadow-current'} p-4 rounded-xl shadow-xl`}>
+                                    <p className="text-lg font-bold">{notificationMessage}</p>
                                 </div>
                             </TransitionNotify>
                         )}

@@ -2,7 +2,7 @@
 
 import { z } from "zod";
 import { SendEmail } from "./services/mailjet";
-import { revalidatePath } from "next/cache";
+import { v4 as uuidv4 } from "uuid";
 
 //Esquema de validación del formulario
 const FormSchema = z.object({
@@ -21,23 +21,24 @@ const FormSchema = z.object({
 })
 
 export type State = {
-    errors?: {
+    message: string,
+    errors: {
         name?: string[];
         email?: string[];
         phone?: string[];
         message?: string[];
     },
-    message?: string | null;
+    submissionId?: string,
 }
 
 const SendMail = FormSchema
 
-export async function sendMail(prevState: State, formData: FormData) {
+export async function sendMail(state: State, payload: FormData): Promise<State> {
     const validateFields = SendMail.safeParse({
-        name: formData.get("name"),
-        email: formData.get("email"),
-        phone: formData.get("phone"),
-        message: formData.get("message"),
+        name: payload.get("name"),
+        email: payload.get("email"),
+        phone: payload.get("phone"),
+        message: payload.get("message"),
     });
 
     if (!validateFields.success) {
@@ -47,27 +48,25 @@ export async function sendMail(prevState: State, formData: FormData) {
         }
     }
 
-    const { name, email, phone, message } = validateFields.data;
-
     try {
+        const { name, email, phone, message } = validateFields.data;
         const response = await SendEmail({name, email, phone, message})
 
-        const result = response
-
-        if (result) {
-            revalidatePath("/contacto")
-            return {message: "Formulario enviado correctamente"}
+        if (response) {
+            return {message: "Formulario enviado correctamente", errors: {}, submissionId: uuidv4()}
         } else {
             return {
                 errors: { message: ["Error al enviar el correo"] },
-                message: "Hubo un error inesperado al enviar el correo"
+                message: "Hubo un error inesperado al enviar el correo",
+                submissionId: uuidv4()
             }
         }
     } catch (error) {
         console.error("Error al enviar el correo: ", error)
         return ({
             errors: { message: ["Error al enviar el correo"] },
-            message: "Hubo un error inesperado al enviar el correo"
+            message: "Hubo un error inesperado al enviar el correo",
+            submissionId: uuidv4()
         })
     }
 }

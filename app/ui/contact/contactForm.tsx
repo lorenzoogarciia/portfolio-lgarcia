@@ -8,27 +8,18 @@ type Props = {
 }
 
 export default function ContactForm({onSucces}: Props) {
-    const initialSate: State = { message: null, errors: {} }
+    const initialSate: State = { message: "", errors: {}, submissionId: undefined}
     const [state, formAction] = useActionState(sendMail, initialSate)
-    const [prevMessage, setPrevMessage] = useState<string | null>(null)
+    const [lastSubmissionId, setLastSubmissionId] = useState<string | undefined>(undefined)
 
     useEffect(() => {
-        console.log("useEffect corriendo")
-        if (state.message === 'Formulario enviado correctamente') {
-            onSucces?.("¡Solicitud enviada!")
-            console.log("Se llama a onSucces")
+        if (state.message === 'Formulario enviado correctamente' && state.submissionId !== lastSubmissionId && state.submissionId !== undefined) {
+            //onSucces?.("¡Solicitud enviada!")
+            onSucces?.(state.message)
+            setLastSubmissionId(state.submissionId)
         }
-        
-        console.log("Poniendo prevMessage a", state.message ?? null)
-        setPrevMessage(state.message ?? null)
-    }, [state.message, onSucces, prevMessage])
-
-    useEffect(() => {
-        console.log("ContactForm MONTADO")
-        return () => {
-            console.log("ContactForm DESMONTADO")
-        }
-    })
+        console.log("Submission id: ", state.submissionId ?? null)
+    }, [state.message, state.submissionId, lastSubmissionId, onSucces])
     
     return (
             <form action={formAction}>
