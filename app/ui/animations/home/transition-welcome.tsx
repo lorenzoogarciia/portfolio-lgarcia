@@ -5,10 +5,10 @@ import { motion } from 'framer-motion'
 export default function TransitionWelcome() {
     const paragraphs = [
         "Bienvenido a mi portafolio personal, ¡es un placer tenerte por aquí!",
-        "Si eres un apasionado por la programación déjame decirte que estás  en el lugar correcto.",
-        "Aquí podrás encontrar mis proyectos más recientes e importantes",
-        "Así como toda mi trayectoria, estudios y conocimiento, ya que la  mayoría de mis códigos son públicos",
-        "y están listos para ser utilizados por alguien como tú, espero  que disfrutes mi carta de presentación."
+        "Desarrollador Full Stack Junior con un año de experiencia apasionado por  la programación",
+        "Aquí podrás encontrar mis proyectos más recientes e importantes,",
+        "así como toda mi trayectoria, estudios y conocimiento.",
+        "¡Espero que disfrutes mi carta de presentación!"
     ]
     
     const container = {

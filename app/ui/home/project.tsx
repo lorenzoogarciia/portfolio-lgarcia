@@ -13,6 +13,7 @@ interface ProjectProps {
     description: string;
 }
 
+
 export default function Project({
     title, 
     imageURL,
@@ -39,6 +40,7 @@ export default function Project({
                                 key={tech.name}
                                 src={`${tech.icon}`}
                                 alt='technology-icon'
+                                style={{ objectFit: 'contain'}}
                                 width={40}
                                 height={40}/>
                         ))}

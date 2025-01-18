@@ -9,7 +9,7 @@ import TransitionWelcome from "./ui/animations/home/transition-welcome";
 export default function Home() {
   return (
     <TransitionWrapper>
-      <div className="container mx-auto px-4 py-2 md:py-4 font-[family-name:var(--font-geist-sans)]">
+      <div className="container mx-auto px-4 py-2 md:py-12 font-[family-name:var(--font-geist-sans)]">
         <main className="px-4 mt-8">
             <section className="min-h-screen">
             <div className="items-center gap-4">
@@ -24,8 +24,11 @@ export default function Home() {
               <div className="flex flex-row items-center justify-center text-center text-4xl text-secondary gap-2 md:min-h-[50px] min-h-[110px]">
                   <AnimatedTitle />  
               </div>
-              <div className="text-center font-mono rounded-xl p-4">
+              <div className="text-center font-inter rounded-xl p-4">
                 <TransitionWelcome />
+              </div>
+              <div className="items-center text-center py-4">
+                <h1 className="text-secondary">Estas son todas mis habilidades</h1>
               </div>
               <div>
 

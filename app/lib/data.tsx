@@ -17,6 +17,13 @@ export interface ProjectData {
     status: string;
 }
 
+export interface HabilitesData {
+    name: string,
+    webUrl: string,
+    slug: string,
+    iconUrl: string | null
+}
+
 export const projects: ProjectData[] = [
     {
         title: "AM Peluqueros",
@@ -90,9 +97,9 @@ export const projects: ProjectData[] = [
                 docURL: "https://reactnative.dev/"
             },
             {
-                name: "Firebase",
-                icon: "/img/icons/Firebase.png",
-                docURL: "https://firebase.google.com/"
+                name: "Supabase",
+                icon: "/img/icons/supabase-icon.png",
+                docURL: "https://supabase.com"
             }
         ],
         hasGithub: true,
@@ -124,4 +131,62 @@ export const projects: ProjectData[] = [
         webURL: null,
         status: "Finalizado"
     },
+]
+
+export const habilities: HabilitesData[] = [
+    {
+        name: "React",
+        webUrl: "https://es.react.dev",
+        slug: "react",
+        iconUrl: "/img/icons/React Native.png",
+    },
+    {
+        name: "Next",
+        webUrl: "https://nextjs.org/",
+        slug: "nextjs",
+        iconUrl: "/img/icons/NextJS.png",
+    },
+    {
+        name: "Angular",
+        webUrl: "https://angular.dev",
+        slug: "angular",
+        iconUrl: "/img/icons/angular-icon.png",
+    },
+    {
+        name: "React Native",
+        webUrl: "https://reactnative.dev/",
+        slug: "react-native",
+        iconUrl: "/img/icons/React Native.png",
+    },
+    {
+        name: "Kotlin",
+        webUrl: "https://kotlinlang.org/",
+        slug: "kotlin",
+        iconUrl: "/img/icons/Kotlin.png",
+    },
+    {
+        name: "Java",
+        webUrl: "https://dev.java",
+        slug: "java",
+        iconUrl: "/img/icons/Kotlin.png",
+    },
+    {
+        name: "Spring Boot",
+        webUrl: "https://spring.io/projects/spring-boot",
+        slug: "spring-boot",
+        iconUrl: "/img/icons/Spring Boot.png",
+    },
+    {
+        name: "PHP",
+        webUrl: "https://www.php.net/docs.php",
+        slug: "php",
+        iconUrl: "/img/icons/Spring Boot.png",
+    },
+    {
+        name: "Laravel",
+        webUrl: "https://laravel.com",
+        slug: "laravel",
+        iconUrl: "/img/icons/Spring Boot.png",
+    },
+
 ]

@@ -11,7 +11,7 @@ import TransitionButtonHeader from './animations/transition-button-header';
 
  const navItems = [
     { href: '/', label: 'Inicio' },
-    { href: '/proyectos', label: 'Proyectos' },
+    //{ href: '/proyectos', label: 'Proyectos' },
     { href: '/contacto', label: 'Contacto' },
  ]
 
@@ -56,7 +56,7 @@ export default function Header() {
                             <li> 
                                     <Link
                                     href={item.href}
-                                    className="block p-2 hover:bg-secondary rounded-xl text-xl"
+                                    className={`block p-2 transition-colors hover:text-accent ${pathname === item.href ? 'text-accent bg-secondary' : ''} text-xl rounded-xl hover:bg-secondary`}
                                     onClick={() => setIsOpen(false)}
                                     >
                                     {item.label}
