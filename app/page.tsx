@@ -5,12 +5,14 @@ import  TransitionWrapper  from './ui/animations/transition-wrapper';
 import AnimatedTitle from "./ui/animations/home/transition-title";
 import TransitionCard from "./ui/animations/home/transiton-cards";
 import TransitionWelcome from "./ui/animations/home/transition-welcome";
+import SkillsCarrousel from "./ui/animations/home/skills-carrousel";
 
 export default function Home() {
+
   return (
     <TransitionWrapper>
       <div className="container mx-auto px-4 py-2 md:py-12 font-[family-name:var(--font-geist-sans)]">
-        <main className="px-4 mt-8">
+        <main className="px-4 mt-8 md:mt-0">
             <section className="min-h-screen">
             <div className="items-center gap-4">
               <h1 className="text-4xl font-bold text-center text-secondary">
@@ -28,7 +30,10 @@ export default function Home() {
                 <TransitionWelcome />
               </div>
               <div className="items-center text-center py-4">
-                <h1 className="text-secondary">Estas son todas mis habilidades</h1>
+                <h1 className="text-secondary">Se un poco de todo esto...</h1>
+                <div className="mt-12 mb-12 md:mb-0">
+                  <SkillsCarrousel />
+                </div>
               </div>
               <div>
 

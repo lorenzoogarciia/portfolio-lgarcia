@@ -147,16 +147,16 @@ export const habilities: HabilitesData[] = [
         iconUrl: "/img/icons/NextJS.png",
     },
     {
-        name: "Angular",
-        webUrl: "https://angular.dev",
-        slug: "angular",
-        iconUrl: "/img/icons/angular-icon.png",
-    },
-    {
         name: "React Native",
         webUrl: "https://reactnative.dev/",
         slug: "react-native",
         iconUrl: "/img/icons/React Native.png",
+    },
+    {
+        name: "Angular",
+        webUrl: "https://angular.dev",
+        slug: "angular",
+        iconUrl: "/img/icons/angular-icon.png",
     },
     {
         name: "Kotlin",
@@ -168,7 +168,7 @@ export const habilities: HabilitesData[] = [
         name: "Java",
         webUrl: "https://dev.java",
         slug: "java",
-        iconUrl: "/img/icons/Kotlin.png",
+        iconUrl: "/img/icons/java-icon.png",
     },
     {
         name: "Spring Boot",
@@ -180,13 +180,13 @@ export const habilities: HabilitesData[] = [
         name: "PHP",
         webUrl: "https://www.php.net/docs.php",
         slug: "php",
-        iconUrl: "/img/icons/Spring Boot.png",
+        iconUrl: "/img/icons/php-icon.png",
     },
     {
         name: "Laravel",
         webUrl: "https://laravel.com",
         slug: "laravel",
-        iconUrl: "/img/icons/Spring Boot.png",
+        iconUrl: "/img/icons/laravel-icon.png",
     },
 
 ]
