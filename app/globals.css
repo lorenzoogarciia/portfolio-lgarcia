@@ -76,3 +76,17 @@ body {
   color: inherit; /* Toma el color del texto */
   animation: blink 0.8s steps(2, start) infinite;
 }
+
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-128%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll-marquee 15s linear infinite;
+  animation-timing-function: linear;
+}

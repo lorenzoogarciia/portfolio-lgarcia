@@ -24,6 +24,68 @@ export interface HabilitesData {
     iconUrl: string | null
 }
 
+export interface TrayectoryData {
+    id: number
+    company: string;
+    position: string;
+    date: string;
+    description: string;
+}
+
+export interface StudyData {
+    title: string;
+    center: string;
+    date: string;
+}
+
+export const studies: StudyData[] = [
+    {
+        title: "Grado en Ingeniería Informática",
+        center: "UNED",
+        date: "2024 - Actualidad"
+    },
+    {
+        title: "Desarrollo de Aplicaciones Multiplataforma",
+        center: "Ilerna",
+        date: "Sept. 2022 - Junio 2024"
+    },
+    {
+        title: "Sistemas Microinformáticos y Redes",
+        center: "IES Gonzalo Nazareno",
+        date: "Sept. 2019 - Junio 2021"
+    }
+]
+
+export const trayectory: TrayectoryData[] = [
+    {
+        id: 1,
+        company: "Freelance",
+        position: "Desarrollador Web y Mobile",
+        date: "Enero 2024 - Actualidad",
+        description: "En mis ratos libres me gusta desarrollar proyectos propios, si es cierto que me apasiona el mundo de las aplicaciones mobile, he de decir que me encandilado con tecnologías como React, que me hacen pasarme cada vez más al desarrollo web."
+        + " Me gusta estar al día de todo, cosa que es imposible, por lo que me he especializado en tecnologías como React, NextJS, React Native, Kotlin, Spring Boot, Laravel y Firebase."
+        + " Todo en base al trabajo diario y al amor que siento por este fascinante mundo, cosa que me gusta transmitir en mis proyectos y sobre todo, a mis clientes."
+    },
+    {
+        id: 2,
+        company: "Sycket Technologies",
+        position: "Desarrollador Fullstack",
+        date: "Septiembre 2024 - Actualidad",
+        description: "Empresa especializada en el producto Turbopos, un ecosistema fascinante pensado para todo tipo de negocios de hostelería, mis principales funciones aquí son el mantenimiento y actualización del sistema, creado completamente en base a Kotlin"
+        + " y desarrollar apps personalizadas para nuestros clientes, ya sea para nuestros kioscos de autoservicio como nuestras web apps para clientes creadas en flutter."
+        + "Alguna que otra vez me ha tocado mantener la API de estás últimas soluciones, ya que su backend creado en Laravel también necesita alguna que otra mejora de vez en cuando."
+    },
+    {
+        id: 3,
+        company: "Proxya (Actualmente Ayesa)",
+        position: "Desarrollador Fullstack",
+        date: "Marzo 2024 - Junio 2024",
+        description: "Mi primer empleo como programador (prácticas), en el que tuve la oportunidad de trabajar en un proyecto completamente nuevo para mi, PHP puro en el backend, HTML, CSS y algo de JS en el frontend."
+        + " Puedo decir, que junto a mi experiencia en Sycket, aquí fue donde más aprendí, ya que me enfrentaba a un lenguaje completamente nuevo, en un entorno de trabajo completamente diferente al que acostumbraba."
+        + " Siempre agradeceré a los compañeros que tuve allí, que siempre me apoyaron y me enseñaron todo lo que sabían asumiendo mi rol como becario, y haciéndome mejor profesional."
+    }
+]
+
 export const projects: ProjectData[] = [
     {
         title: "AM Peluqueros",
@@ -33,7 +95,7 @@ export const projects: ProjectData[] = [
         technologies: [
             {
                 name: "React Native",
-                icon: "/img/icons/React Native.png",
+                icon: "/img/icons/react-native.png",
                 docURL: "https://reactnative.dev/"
             },
             {
@@ -93,7 +155,7 @@ export const projects: ProjectData[] = [
             },
             {
                 name: "React Native",
-                icon: "/img/icons/React Native.png",
+                icon: "/img/icons/react-native.png",
                 docURL: "https://reactnative.dev/"
             },
             {
@@ -135,10 +197,16 @@ export const projects: ProjectData[] = [
 
 export const habilities: HabilitesData[] = [
     {
+        name: "Javascript",
+        webUrl: "https://developer.mozilla.org/es/docs/Web/JavaScript",
+        slug: "javascript",
+        iconUrl: "/img/icons/javascript-icon.png",
+    },
+    {
         name: "React",
         webUrl: "https://es.react.dev",
         slug: "react",
-        iconUrl: "/img/icons/React Native.png",
+        iconUrl: "/img/icons/react-icon.png",
     },
     {
         name: "Next",
@@ -150,7 +218,7 @@ export const habilities: HabilitesData[] = [
         name: "React Native",
         webUrl: "https://reactnative.dev/",
         slug: "react-native",
-        iconUrl: "/img/icons/React Native.png",
+        iconUrl: "/img/icons/react-native.png",
     },
     {
         name: "Angular",
@@ -188,5 +256,17 @@ export const habilities: HabilitesData[] = [
         slug: "laravel",
         iconUrl: "/img/icons/laravel-icon.png",
     },
+    {
+        name: "Swift",
+        webUrl: "https://swift.org",
+        slug: "swift",
+        iconUrl: "/img/icons/swift-icon.png",
+    },
+    {
+        name: "Firebase",
+        webUrl: "https://firebase.google.com/",
+        slug: "firebase",
+        iconUrl: "/img/icons/Firebase.png",
+    }
 
 ]

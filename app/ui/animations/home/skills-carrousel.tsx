@@ -1,39 +1,40 @@
-'use client'
-
-import { habilities } from "@/app/lib/data";
-import { animate, motion, useMotionValue } from "framer-motion";
+"use client";
 import Image from "next/image";
-import { useEffect } from "react";
-import useMeasure from "react-use-measure";
+import { habilities } from "@/app/lib/data";
 
 export default function SkillsCarrousel() {
-    const [ref, { width }] = useMeasure();
-    const xTranslation = useMotionValue(0);
+  return (
+    <div className="relative w-full overflow-hidden py-10">
+      {/* 
+        El contenedor que se anima. 
+        - 'whitespace-nowrap' para que el contenido no rompa línea.
+        - 'animate-scroll' es la clase que definiremos con keyframes CSS. 
+      */}
+      <div className="flex whitespace-nowrap animate-scroll">
+        {/* Bloque 1 */}
+        {habilities.map((item, i) => (
+          <MarqueeItem key={`original-${i}`} item={item} />
+        ))}
+        {/* Bloque 2 (idéntico) */}
+        {habilities.map((item, i) => (
+          <MarqueeItem key={`clone-${i}`} item={item} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
-    useEffect(() => {
-        const finalPosition = -width / 2 - 24;
-        const controls = animate(xTranslation, finalPosition, {
-            ease: "linear",
-            duration: 25,
-            repeat: Infinity,
-            repeatType: "loop",
-            repeatDelay: 0,
-        })
-
-        return () => controls.stop()
-    }, [xTranslation, width])
-
-    return (
-        <main className="py-10">
-            <motion.div className="absolute left-0 flex gap-12" ref={ref} style={{ x: xTranslation }}>
-                {[...habilities, ...habilities].map((hability, index) => (
-                    <div key={index} className="relative overflow-hidden flex-shrink-0">
-                        <a  href={hability.webUrl} target="_blank" rel="nopener noreferrer" className="transition duration-150 hover:scale-110">
-                            <Image src={hability.iconUrl || ""} alt={hability.name} objectFit="contain" width={80} height={80}/>
-                        </a>
-                    </div>
-                ))}
-            </motion.div>
-        </main>
-    )
+function MarqueeItem({ item }: { item: (typeof habilities)[0] }) {
+  return (
+    <div className="flex-shrink-0 gap-4 px-6 transition-transform duration-100 ease-in-out hover:scale-110">
+        <a href={item.webUrl} target="_blank" rel="noopener noreferrer">
+            <Image
+                src={item.iconUrl || ""}
+                alt={item.name}
+                width={80}
+                height={80}
+            />
+        </a>
+    </div>
+  );
 }

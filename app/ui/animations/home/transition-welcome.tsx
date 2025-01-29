@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function TransitionWelcome() {
     const paragraphs = [
-        "Bienvenido a mi portafolio personal, ¡es un placer tenerte por aquí!",
+        "Bienvenido a mi portfolio personal, ¡es un placer tenerte por aquí!",
         "Desarrollador Full Stack Junior con un año de experiencia apasionado por  la programación",
         "Aquí podrás encontrar mis proyectos más recientes e importantes,",
         "así como toda mi trayectoria, estudios y conocimiento.",

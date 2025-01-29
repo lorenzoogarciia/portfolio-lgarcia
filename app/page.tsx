@@ -1,11 +1,13 @@
 import Project from "./ui/home/project";
-import { projects } from "./lib/data";
+import { projects, trayectory, studies } from "./lib/data";
 import Link from 'next/link'
 import  TransitionWrapper  from './ui/animations/transition-wrapper';
 import AnimatedTitle from "./ui/animations/home/transition-title";
 import TransitionCard from "./ui/animations/home/transiton-cards";
 import TransitionWelcome from "./ui/animations/home/transition-welcome";
 import SkillsCarrousel from "./ui/animations/home/skills-carrousel";
+import TrayectoryCard from "./ui/home/trayectory-card";
+import StudyCard from "./ui/home/study-card";
 
 export default function Home() {
 
@@ -13,7 +15,7 @@ export default function Home() {
     <TransitionWrapper>
       <div className="container mx-auto px-4 py-2 md:py-12 font-[family-name:var(--font-geist-sans)]">
         <main className="px-4 mt-8 md:mt-0">
-            <section className="min-h-screen">
+          <section id="welcome" className="mb-24">
             <div className="items-center gap-4">
               <h1 className="text-4xl font-bold text-center text-secondary">
                 ¡Bienvenido! soy ...
@@ -31,18 +33,57 @@ export default function Home() {
               </div>
               <div className="items-center text-center py-4">
                 <h1 className="text-secondary">Se un poco de todo esto...</h1>
-                <div className="mt-12 mb-12 md:mb-0">
+                <div className="mt-12 mb-12 md:mb-0 overflow-x-hidden">
                   <SkillsCarrousel />
                 </div>
               </div>
               <div>
-
               </div>
             </div>
           </section>
-          <section className="md:min-h-[400px] mb-4">
+          <section id="trayectoria" className="mb-24">
+            <div>
+              <h1 className="text-secondary text-center">Trayectoria Profesional</h1>
+              <div className="flex flex-col flex-wrap gap-4 mt-8 justify-start items-center px-8">
+                {trayectory.map((job) => {
+                  return (
+                    <div key={job.id}>
+                      <TrayectoryCard
+                        company={job.company} 
+                        position={job.position}
+                        date={job.date}
+                        description={job.description}  
+                      />
+                    </div>
+                  )
+                })}
+              </div>
+              <div className="flex justify-center items-center mt-4">
+                <button className="border-2 border-secondary text-secondary font-bold rounded-full p-4 transition-colors hover:bg-secondary hover:text-primary duration-200 ease-in-out hover:scale-110">Descargar CV</button>
+              </div>
+            </div>
+          </section>
+          <section id="studies" className="mb-24">
+            <div className="">
+              <h1 className="text-center text-secondary">Estudios</h1>
+              <div className="flex flex-row flex-wrap text-secondary gap-4 mt-8 justify-center items-center">
+                {studies.map((study) => {
+                  return (
+                    <div key={study.title}>
+                      <StudyCard
+                        title={study.title}
+                        center={study.center}
+                        date={study.date}
+                      />
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </section>
+          <section id="lastProjects" className="md:min-h-[400px] mb-4">
             <div className="text-center">
-              <h2 className="text-secondary">¡Revisa mis últimos proyectos!</h2>
+              <h1 className="text-secondary">¡Revisa mis últimos proyectos!</h1>
               <div className="flex flex-row flex-wrap gap-4 mt-8 justify-center items-center">
                 {projects.slice(0,3).map((project) => (
                   <TransitionCard key={project.slug}>
