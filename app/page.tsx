@@ -1,3 +1,4 @@
+'use client'
 import Project from "./ui/home/project";
 import { projects, trayectory, studies } from "./lib/data";
 import Link from 'next/link'
@@ -8,6 +9,7 @@ import TransitionWelcome from "./ui/animations/home/transition-welcome";
 import SkillsCarrousel from "./ui/animations/home/skills-carrousel";
 import TrayectoryCard from "./ui/home/trayectory-card";
 import StudyCard from "./ui/home/study-card";
+import TransitionSend from "./ui/animations/contact/transition-sendbutton";
 
 export default function Home() {
 
@@ -59,7 +61,14 @@ export default function Home() {
                 })}
               </div>
               <div className="flex justify-center items-center mt-4">
-                <button className="border-2 border-secondary text-secondary font-bold rounded-full p-4 transition-colors hover:bg-secondary hover:text-primary duration-200 ease-in-out hover:scale-110">Descargar CV</button>
+                <TransitionSend>
+                  <a
+                    href="/CV_Lorenzo_Garcia_Garcia.pdf"
+                    download="CV_Lorenzo_Garcia.pdf"
+                    className="border-2 border-secondary text-secondary font-bold rounded-full p-4 transition hover:bg-secondary hover:text-primary duration-200 ease-in-out hover:scale-110">
+                    Descargar CV
+                  </a>
+                </TransitionSend>
               </div>
             </div>
           </section>

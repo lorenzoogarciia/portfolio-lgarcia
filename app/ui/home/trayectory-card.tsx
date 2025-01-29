@@ -30,7 +30,7 @@ export default function TrayectoryCard(
                 <h2>{company}</h2>
                 <p className="text-xl font-bold pb-2">{position}</p>
                 <p className="font-bold">{date}</p>
-                <p className="mx-auto py-2">
+                <p className={"mx-auto py-2"}>
                     {isExpanded || description.length <= maxDescriptionLength ? description : `${description.substring(0, maxDescriptionLength)}...`}
                 </p>
                 {description.length > maxDescriptionLength && (

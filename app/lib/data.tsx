@@ -50,7 +50,7 @@ export const studies: StudyData[] = [
         date: "Sept. 2022 - Junio 2024"
     },
     {
-        title: "Sistemas Microinformáticos y Redes",
+        title: "CFGM Sistemas Microinformáticos y Redes",
         center: "IES Gonzalo Nazareno",
         date: "Sept. 2019 - Junio 2021"
     }
@@ -71,9 +71,9 @@ export const trayectory: TrayectoryData[] = [
         company: "Sycket Technologies",
         position: "Desarrollador Fullstack",
         date: "Septiembre 2024 - Actualidad",
-        description: "Empresa especializada en el producto Turbopos, un ecosistema fascinante pensado para todo tipo de negocios de hostelería, mis principales funciones aquí son el mantenimiento y actualización del sistema, creado completamente en base a Kotlin"
-        + " y desarrollar apps personalizadas para nuestros clientes, ya sea para nuestros kioscos de autoservicio como nuestras web apps para clientes creadas en flutter."
-        + "Alguna que otra vez me ha tocado mantener la API de estás últimas soluciones, ya que su backend creado en Laravel también necesita alguna que otra mejora de vez en cuando."
+        description: "Empresa especializada en el producto Turbopos, un ecosistema fascinante pensado para todo tipo de negocios de hostelería, mis principales funciones aquí son el mantenimiento y actualización de las aplicaciones para nuestro ecosistema, creado completamente en base a Kotlin"
+        + " y desarrollar apps personalizadas para nuestros clientes, ya sea para nuestros kioscos de autoservicio como nuestras web apps para clientes creadas en Flutter."
+        + " Alguna que otra vez me ha tocado mantener la API de estás últimas soluciones, ya que su backend creado en Laravel también necesita alguna que otra mejora de vez en cuando."
     },
     {
         id: 3,
