@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Roboto, Ubuntu } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next";
 import Header from "./ui/header";
 import Footer from "./ui/footer";
 
@@ -33,8 +34,9 @@ const ubuntu = Ubuntu({
 })
 
 export const metadata: Metadata = {
-  title: "LGarciaDev",
-  description: "Bienvenidos a LGarciaDev!",
+  title: "Inicio | LGarciaDev",
+  description: "¡Hola, soy Lorenzo Garcia! Desarrollador de Software Full Stack en Sycket Technologies y estudiante de Ingeniería informática"
+  + "¡Bienvenido a mi sitio web!"
 };
 
 export default function RootLayout({
@@ -55,6 +57,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <SpeedInsights />
+          <Analytics />
       </body>
     </html>
   );

@@ -60,7 +60,7 @@ export default function Home() {
                   )
                 })}
               </div>
-              <div className="flex justify-center items-center mt-4">
+              <div className="flex justify-center items-center mt-12">
                 <TransitionSend>
                   <a
                     href="/CV_Lorenzo_Garcia_Garcia.pdf"

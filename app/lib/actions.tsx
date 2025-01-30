@@ -1,6 +1,7 @@
 'use server'
 
 import { z } from "zod";
+import { projects } from "./data";
 import { SendEmail } from "./services/mailjet";
 import { v4 as uuidv4 } from "uuid";
 
@@ -69,4 +70,10 @@ export async function sendMail(state: State, payload: FormData): Promise<State> 
             submissionId: uuidv4()
         })
     }
+}
+
+export async function getProjectBySlug(slug: string) {
+    const project =  projects.find((p) => p.slug === slug)
+
+    return project
 }
