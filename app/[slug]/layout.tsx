@@ -7,7 +7,7 @@ interface LayoutProps {
 }
 
 export async function generateMetadata({ params }: LayoutProps): Promise<Metadata> {
-    const project = await getProjectBySlug((await params).slug);
+    const project = await getProjectBySlug((await params).slug.toString());
     return {
         title: `${project?.title} | LGarciaDev` || "404 Not Found",
         description: `${project?.description}` || "Descripción del proyecto no disponible",
