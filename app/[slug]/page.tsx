@@ -11,16 +11,18 @@ import TransitionWeb from "../ui/animations/slug/transition-web"
 
 export async function generateStaticParams() {
     return projects.map((project) => ({
+        params: {
             slug: project.slug
+        }
     }))
 }
 
 interface ProjectPageProps {
-    params: {slug: string}
+    params: Promise<{ slug: string }>
 }
 
 export default async function Page({ params }: ProjectPageProps) {
-    const { slug } = params
+    const { slug } = await params
     const project =  projects.find((p) => p.slug === slug) 
     if(!project) return (
         <div className="mx-auto flex flex-col items-center gap-2 py-8 md:py-12">
