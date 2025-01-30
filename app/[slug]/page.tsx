@@ -11,9 +11,7 @@ import TransitionWeb from "../ui/animations/slug/transition-web"
 
 export async function generateStaticParams() {
     return projects.map((project) => ({
-        params: {
             slug: project.slug
-        }
     }))
 }
 
