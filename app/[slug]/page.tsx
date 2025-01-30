@@ -18,11 +18,11 @@ export async function generateStaticParams() {
 }
 
 interface ProjectPageProps {
-    params: Promise<{ slug: string }>
+    params: {slug: string}
 }
 
 export default async function Page({ params }: ProjectPageProps) {
-    const { slug } = await params
+    const { slug } = params
     const project =  projects.find((p) => p.slug === slug) 
     if(!project) return (
         <div className="mx-auto flex flex-col items-center gap-2 py-8 md:py-12">

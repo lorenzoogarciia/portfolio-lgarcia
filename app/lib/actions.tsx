@@ -73,7 +73,11 @@ export async function sendMail(state: State, payload: FormData): Promise<State> 
 }
 
 export async function getProjectBySlug(slug: string) {
-    const project =  projects.find((p) => p.slug === slug)
-
-    return project
+    try {
+        const project =  projects.find((p) => p.slug === slug)
+        return project
+    } catch (error) {
+        console.error("Error al obtener el proyecto: ", error)
+        return null
+    }
 }
