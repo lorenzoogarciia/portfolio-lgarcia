@@ -22,7 +22,7 @@ export default function Project({
 } : ProjectProps) {
     return (
         <div className='px-4 py-4 min-h-[250px]'>
-            <main className="bg-primary text-secondary text-left rounded-xl p-4 transition-colors hover:bg-secondary hover:text-primary border-2 border-secondary">
+            <main className="bg-secondary text-primary text-left rounded-xl p-4 transition-colors hover:bg-primary hover:text-secondary border-2 border-secondary">
                 <div className='py-2 relative'>
                     <Image 
                         src={imageURL || `/nextjs.svg`}
