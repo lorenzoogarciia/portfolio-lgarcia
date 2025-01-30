@@ -3,11 +3,11 @@ import { getProjectBySlug } from "../lib/actions";
 
 interface LayoutProps {
     children: React.ReactNode;
-    params: { slug: string};
+    params: Promise<{slug: string}>;
 }
 
 export async function generateMetadata({ params }: LayoutProps): Promise<Metadata> {
-    const project = await getProjectBySlug(params.slug);
+    const project = await getProjectBySlug((await params).slug);
     return {
         title: `${project?.title} | LGarciaDev` || "404 Not Found",
         description: `${project?.description}` || "Descripción del proyecto no disponible",
