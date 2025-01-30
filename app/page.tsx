@@ -24,7 +24,7 @@ export default function Home() {
               </h1>
               <div className="text-center mt-4 p-4">
                 <h1 className="font-bold font-inter text-6xl animate-color-shift">
-                    {"<Lorenzo Garcia />"}
+                    {"<Puta Sevilla />"}
                 </h1>
               </div>
               <div className="flex flex-row items-center justify-center text-center text-4xl text-secondary gap-2 md:min-h-[50px] min-h-[110px]">

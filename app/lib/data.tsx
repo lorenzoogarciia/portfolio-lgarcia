@@ -1,3 +1,14 @@
+import { AngularIcon } from "@/public/icons/angular-icon";
+import { JavaIcon } from "@/public/icons/java-icon";
+import { JavascriptIcon } from "@/public/icons/javascript-icon";
+import { KotlinIcon } from "@/public/icons/kotlin-icon";
+import { NextjsIcon } from "@/public/icons/nextjs-icon";
+import { ReactIcon } from "@/public/icons/react-icon";
+import { ReactnativeIcon } from "@/public/icons/reactNative-icon";
+import SpringIcon from "@/public/icons/springboot-icon";
+
+export type iconSVG = React.FunctionComponent<React.SVGProps<SVGSVGElement>>
+
 export interface TechData {
     name: string;
     icon: string;
@@ -22,6 +33,7 @@ export interface HabilitesData {
     webUrl: string,
     slug: string,
     iconUrl: string | null
+    iconSvg: iconSVG | null 
 }
 
 export interface TrayectoryData {
@@ -201,72 +213,84 @@ export const habilities: HabilitesData[] = [
         webUrl: "https://developer.mozilla.org/es/docs/Web/JavaScript",
         slug: "javascript",
         iconUrl: "/img/icons/javascript-icon.png",
+        iconSvg: JavascriptIcon
     },
     {
         name: "React",
         webUrl: "https://es.react.dev",
         slug: "react",
         iconUrl: "/img/icons/react-icon.png",
+        iconSvg: ReactIcon
     },
     {
         name: "Next",
         webUrl: "https://nextjs.org/",
         slug: "nextjs",
         iconUrl: "/img/icons/NextJS.png",
+        iconSvg: NextjsIcon
     },
     {
         name: "React Native",
         webUrl: "https://reactnative.dev/",
         slug: "react-native",
         iconUrl: "/img/icons/react-native.png",
+        iconSvg: ReactnativeIcon
     },
     {
         name: "Angular",
         webUrl: "https://angular.dev",
         slug: "angular",
         iconUrl: "/img/icons/angular-icon.png",
+        iconSvg: AngularIcon
     },
     {
         name: "Kotlin",
         webUrl: "https://kotlinlang.org/",
         slug: "kotlin",
         iconUrl: "/img/icons/Kotlin.png",
+        iconSvg: KotlinIcon
     },
     {
         name: "Java",
         webUrl: "https://dev.java",
         slug: "java",
         iconUrl: "/img/icons/java-icon.png",
+        iconSvg: JavaIcon
     },
     {
         name: "Spring Boot",
         webUrl: "https://spring.io/projects/spring-boot",
         slug: "spring-boot",
         iconUrl: "/img/icons/Spring Boot.png",
+        iconSvg: SpringIcon
     },
     {
         name: "PHP",
         webUrl: "https://www.php.net/docs.php",
         slug: "php",
         iconUrl: "/img/icons/php-icon.png",
+        iconSvg: null
     },
     {
         name: "Laravel",
         webUrl: "https://laravel.com",
         slug: "laravel",
         iconUrl: "/img/icons/laravel-icon.png",
+        iconSvg: null
     },
     {
         name: "Swift",
         webUrl: "https://swift.org",
         slug: "swift",
         iconUrl: "/img/icons/swift-icon.png",
+        iconSvg: null
     },
     {
         name: "Firebase",
         webUrl: "https://firebase.google.com/",
         slug: "firebase",
         iconUrl: "/img/icons/Firebase.png",
+        iconSvg: null
     }
 
 ]

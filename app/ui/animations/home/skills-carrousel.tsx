@@ -25,15 +25,20 @@ export default function SkillsCarrousel() {
 }
 
 function MarqueeItem({ item }: { item: (typeof habilities)[0] }) {
+  const IconSVG = item.iconSvg;
   return (
     <div className="flex-shrink-0 gap-4 px-6 transition-transform duration-100 ease-in-out hover:scale-110">
         <a href={item.webUrl} target="_blank" rel="noopener noreferrer">
+          {IconSVG ? (
+            <IconSVG width={80} height={80} />
+          ) : (
             <Image
                 src={item.iconUrl || ""}
                 alt={item.name}
                 width={80}
                 height={80}
             />
+          )}
         </a>
     </div>
   );
