@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { getProjectBySlug } from "../lib/actions";
 
 interface LayoutProps {
@@ -6,7 +5,7 @@ interface LayoutProps {
     params: {slug: string};
 }
 
-export async function generateMetadata({ params }: LayoutProps): Promise<Metadata> {
+export async function generateMetadata({ params }: LayoutProps): Promise<{title: string, description: string}> {
     const project = await getProjectBySlug(params.slug)
     return {
         title: `${project?.title} | LGarciaDev`,
