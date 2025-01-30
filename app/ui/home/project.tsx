@@ -1,8 +1,10 @@
 import Image from 'next/image';
 
+export type iconSVG = React.FunctionComponent<React.SVGProps<SVGSVGElement>>
+
 interface TechData {
     name: string;
-    icon: string;
+    icon: iconSVG | null;
     docURL: string;
 }
 
@@ -36,13 +38,17 @@ export default function Project({
                     <span className='overflow-hidden text-wrap line-clamp-2 max-w-[200px] mb-2'>{description}</span>
                     <div className='flex flex-row gap-4 pt-4'>
                         {technologies.map((tech) => (
+                            tech.icon ? (
+                            <tech.icon key={tech.icon.name} className='w-10 h-10' />
+                        ) : (
                                 <Image 
                                 key={tech.name}
                                 src={`${tech.icon}`}
-                                alt='technology-icon'
+                                alt={tech.name}
                                 style={{ objectFit: 'contain'}}
                                 width={40}
                                 height={40}/>
+                            )
                         ))}
                     </div>
                 </div>

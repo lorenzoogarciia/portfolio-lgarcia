@@ -77,13 +77,18 @@ export default async function Page({ params }: ProjectPageProps) {
                                     href={tech.docURL}
                                     target="_blank"
                                     rel="noopener noreferrer">
-                                    <Image
-                                        src={tech.icon || "/window.svg"}
-                                        alt={tech.name || "foto-tecnologia"}
-                                        width={40}
-                                        height={40}
-                                        className="rounded-xl"
-                                    />
+                                    {tech.icon ? (
+                                        <tech.icon className="w-10 h-10" />
+                                    ) : (
+                                        <Image
+                                            key={tech.name}
+                                            src={`${tech.icon}`}
+                                            alt={tech.name}
+                                            style={{ objectFit: "contain" }}
+                                            width={40}
+                                            height={40}
+                                        />
+                                    )}
                                 </Link>
                             </TransitionTechnology>
                         ))}

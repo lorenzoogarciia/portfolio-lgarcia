@@ -1,17 +1,23 @@
 import { AngularIcon } from "@/public/icons/angular-icon";
+import { ExpoIcon } from "@/public/icons/expo-icon";
+import { FirebaseIcon } from "@/public/icons/firebase-icon";
 import { JavaIcon } from "@/public/icons/java-icon";
 import { JavascriptIcon } from "@/public/icons/javascript-icon";
 import { KotlinIcon } from "@/public/icons/kotlin-icon";
+import { LaravelIcon } from "@/public/icons/laravel-icon";
 import { NextjsIcon } from "@/public/icons/nextjs-icon";
+import { PhpIcon } from "@/public/icons/php-icon";
 import { ReactIcon } from "@/public/icons/react-icon";
 import { ReactnativeIcon } from "@/public/icons/reactNative-icon";
 import SpringIcon from "@/public/icons/springboot-icon";
+import { SupabaseIcon } from "@/public/icons/supabase-icon";
+import { SwiftRoundedIcon } from "@/public/icons/swift-rounded-icon";
 
 export type iconSVG = React.FunctionComponent<React.SVGProps<SVGSVGElement>>
 
 export interface TechData {
     name: string;
-    icon: string;
+    icon: iconSVG | null;
     docURL: string;
 }
 
@@ -107,17 +113,17 @@ export const projects: ProjectData[] = [
         technologies: [
             {
                 name: "React Native",
-                icon: "/img/icons/react-native.png",
+                icon: ReactnativeIcon,
                 docURL: "https://reactnative.dev/"
             },
             {
                 name: "Expo",
-                icon: "/img/icons/Expo.png",
+                icon: ExpoIcon,
                 docURL: "https://expo.dev/"
             },
             {
                 name: "Firebase",
-                icon: "/img/icons/Firebase.png",
+                icon: FirebaseIcon,
                 docURL: "https://firebase.google.com/"
             }
         ],
@@ -134,12 +140,12 @@ export const projects: ProjectData[] = [
         technologies: [
             {
                 name: "NextJS",
-                icon: "/img/icons/NextJS.png",
+                icon: NextjsIcon,
                 docURL: "https://nextjs.org/"
             },
             {
                 name: "Firebase",
-                icon: "/img/icons/Firebase.png",
+                icon: FirebaseIcon,
                 docURL: "https://firebase.google.com/"
             }
 
@@ -151,28 +157,28 @@ export const projects: ProjectData[] = [
     },
     {
         title: "Nutrigest",
-        description: "Nutrigest PRO es la versión actualizada de Nutrigest, mucho más profunda y profesional, pensada para ser multiplataforma, con un backend creado en SpringBoot y un frontend creado con NextJS para la versión web y React Native para su versión móvil.",
+        description: "Nutrigest es la versión actualizada de Nutrigest, mucho más profunda y profesional, pensada para ser multiplataforma, con un backend creado en SpringBoot y un frontend creado con NextJS para la versión web y React Native para su versión móvil.",
         author: "Lorenzo Garcia Garcia",
         imageURL: `/img/nutricion.jpg`,
         technologies: [
             {
                 name: "SpringBoot",
-                icon: "/img/icons/Spring Boot.png",
+                icon: SpringIcon,
                 docURL: "https://spring.io/projects/spring-boot"
             },
             {
                 name: "NextJS",
-                icon: "/img/icons/NextJS.png",
+                icon: NextjsIcon,
                 docURL: "https://nextjs.org/"
             },
             {
                 name: "React Native",
-                icon: "/img/icons/react-native.png",
+                icon: ReactnativeIcon,
                 docURL: "https://reactnative.dev/"
             },
             {
                 name: "Supabase",
-                icon: "/img/icons/supabase-icon.png",
+                icon: SupabaseIcon,
                 docURL: "https://supabase.com"
             }
         ],
@@ -190,12 +196,12 @@ export const projects: ProjectData[] = [
         technologies: [
             {
                 name: "Kotlin",
-                icon: "/img/icons/Kotlin.png",
+                icon: KotlinIcon,
                 docURL: "https://kotlinlang.org/"
             },
             {
                 name: "Firebase",
-                icon: "/img/icons/Firebase.png",
+                icon: FirebaseIcon,
                 docURL: "https://firebase.google.com/"
             }
 
@@ -269,28 +275,28 @@ export const habilities: HabilitesData[] = [
         webUrl: "https://www.php.net/docs.php",
         slug: "php",
         iconUrl: "/img/icons/php-icon.png",
-        iconSvg: null
+        iconSvg: PhpIcon
     },
     {
         name: "Laravel",
         webUrl: "https://laravel.com",
         slug: "laravel",
         iconUrl: "/img/icons/laravel-icon.png",
-        iconSvg: null
+        iconSvg: LaravelIcon
     },
     {
         name: "Swift",
         webUrl: "https://swift.org",
         slug: "swift",
         iconUrl: "/img/icons/swift-icon.png",
-        iconSvg: null
+        iconSvg: SwiftRoundedIcon
     },
     {
         name: "Firebase",
         webUrl: "https://firebase.google.com/",
         slug: "firebase",
         iconUrl: "/img/icons/Firebase.png",
-        iconSvg: null
+        iconSvg: FirebaseIcon
     }
 
 ]
