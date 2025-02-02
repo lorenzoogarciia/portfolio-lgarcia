@@ -36,7 +36,8 @@ const ubuntu = Ubuntu({
 export const metadata: Metadata = {
   title: "Inicio | LGarciaDev",
   description: "¡Hola, soy Lorenzo Garcia! Desarrollador de Software Full Stack en Sycket Technologies y estudiante de Ingeniería informática"
-  + " ¡Bienvenido a mi sitio web!"
+  + " ¡Bienvenido a mi sitio web!",
+  icons: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨🏻‍💻</text></svg>",
 };
 
 export default function RootLayout({
