@@ -63,7 +63,7 @@ export default function Home() {
               <div className="flex justify-center items-center mt-12">
                 <TransitionSend>
                   <a
-                    href="/CV_Lorenzo_Garcia_Garcia.pdf"
+                    href="/CV_Lorenzo.pdf"
                     download="CV_Lorenzo_Garcia.pdf"
                     className="border-2 border-secondary text-secondary font-bold rounded-full p-4 transition hover:bg-secondary hover:text-primary duration-200 ease-in-out hover:scale-110">
                     Descargar CV
