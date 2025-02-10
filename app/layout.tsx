@@ -3,7 +3,6 @@ import { Geist, Geist_Mono, Inter, Roboto, Ubuntu } from "next/font/google";
 import "./globals.css";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next";
-import  i18n  from "@/app/lib/i18n";
 import Header from "./ui/header";
 import Footer from "./ui/footer";
 
