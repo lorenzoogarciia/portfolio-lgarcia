@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import {  useState } from 'react';
 import TransitionMobileMenu from './animations/transition-mobile-menu';
 import TransitionButtonHeader from './animations/transition-button-header';
 
@@ -16,24 +16,24 @@ import TransitionButtonHeader from './animations/transition-button-header';
 export default function Header() {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
-    const [isTranslationOpen, setIsTranslationOpen] = useState(false);
-    const translationRef = useRef<HTMLDivElement>(null);
+    // const [isTranslationOpen, setIsTranslationOpen] = useState(false);
+    // const translationRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if(translationRef.current && !translationRef.current.contains(event.target as Node)) {
-                setIsTranslationOpen(false);
-            }
-        }
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside);
-        }
-    }, [])
+    // useEffect(() => {
+    //     const handleClickOutside = (event: MouseEvent) => {
+    //         if(translationRef.current && !translationRef.current.contains(event.target as Node)) {
+    //             setIsTranslationOpen(false);
+    //         }
+    //     }
+    //     document.addEventListener('mousedown', handleClickOutside);
+    //     return () => {
+    //         document.removeEventListener('mousedown', handleClickOutside);
+    //     }
+    // }, [])
 
-    const changeLanguage = (lang: string) => {
-        console.log("Cambiando idioma a: " + lang);
-    }
+    // const changeLanguage = (lang: string) => {
+    //     console.log("Cambiando idioma a: " + lang);
+    // }
 
     return (
         <header className='max-w-full bg-background text-foreground sticky top-0 z-20 backdrop:filter backdrop-blur-xl'>
@@ -43,7 +43,7 @@ export default function Header() {
                     <Link href="/" className='text-2xl font-bold mb-4 sm:mb-0 hover:text-accent hover:bg-secondary hover:rounded-xl rounded-xl delay-75 p-3 transition-colors'>
                         <p>{"LgarciaDev <👨🏻‍💻 />"} </p>
                     </Link>
-                    <div className='p-3 justify-center transition-transform duration-100 hover:scale-110' onMouseEnter={() => setIsTranslationOpen(true)} onMouseLeave={() => setIsTranslationOpen(false)}>
+                    {/* <div className='p-3 justify-center transition-transform duration-100 hover:scale-110' onMouseEnter={() => setIsTranslationOpen(true)} onMouseLeave={() => setIsTranslationOpen(false)}>
                         <button onClick={() => setIsTranslationOpen(!isTranslationOpen)}>
                             <Image
                                 src={'/img/icons/traduccion-icon.png'}
@@ -52,19 +52,19 @@ export default function Header() {
                                 height={25}
                             />
                         </button>
-                        {isTranslationOpen && (
+                         {isTranslationOpen && (
                             <div className='absolute mt-2 mx-auto p-2 bg-primary items-center justify-center border-2 border-secondary rounded shadow-lg z-30' ref={translationRef}>
                                 <ul className='flex flex-col bg-background'>
                                     <li className='border-b-2 p-2 text-secondary transition-colors hover:bg-secondary hover:text-primary'>
                                         <button onClick={() => changeLanguage('es')}>Español</button>
                                     </li>
                                     <li className='border-b-2 p-2 text-secondary transition-colors hover:bg-secondary hover:text-primary'>
-                                        <button onClick={() => changeLanguage('en')}>English</button>
+                                        <button onClick={() => changeLanguage('en')}>Inglés</button>
                                     </li>
                                 </ul>
                             </div>
-                        )}
-                    </div>
+                        )} 
+                    </div> */}
                     
                     </div>
                     

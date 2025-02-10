@@ -155,7 +155,7 @@ export const projects: ProjectData[] = [
     },
     {
         title: "Nutrigest",
-        description: "Nutrigest es la versión actualizada de Nutrigest, mucho más profunda y profesional, pensada para ser multiplataforma, con un backend creado en SpringBoot y un frontend creado con NextJS para la versión web y React Native para su versión móvil.",
+        description: "Nutrigest es una aplicación pensada para nutricionistas que necesitan trabajar desde cualquier parte, tanto utilizar su panel de administración como la aplicación móvil para la gestión de clientes y dietas. Cuenta tanto con panel de nutricionista como panel de cliente, creada de manera nativa para Android y iOS, junto a un backend creado con SpringBoot y una base de datos en PostgreSQL de Supabase, teniendo como base la web principal creada en NextJS.",
         author: "Lorenzo Garcia Garcia",
         imageURL: `/img/nutricion.jpg`,
         technologies: [
@@ -170,9 +170,14 @@ export const projects: ProjectData[] = [
                 docURL: "https://nextjs.org/"
             },
             {
-                name: "React Native",
-                icon: ReactnativeIcon,
+                name: "Kotlin",
+                icon: KotlinIcon,
                 docURL: "https://reactnative.dev/"
+            },
+            {
+                name: "Swift",
+                icon: SwiftRoundedIcon,
+                docURL: "https://swift.org/"
             },
             {
                 name: "Supabase",
