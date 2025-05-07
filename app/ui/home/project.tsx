@@ -25,13 +25,12 @@ export default function Project({
     return (
         <div className='px-4 py-4 min-h-[250px]'>
             <main className="bg-secondary text-primary text-left rounded-xl p-4 transition-colors hover:bg-primary hover:text-secondary border-2 border-secondary">
-                <div className='py-2 relative'>
+                <div className='py-2 relative h-48 w-48 mx-auto'>
                     <Image 
                         src={imageURL || `/nextjs.svg`}
                         alt={title}
-                        width={200}
-                        height={200}
-                        className='rounded-lg'/>
+                        fill
+                        className='object-contain rounded-lg'/>
                 </div>
                 <div className='py-2'>
                     <p className='overflow-hidden font-bold text-lg'>{title}</p>

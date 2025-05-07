@@ -10,8 +10,10 @@ import { PhpIcon } from "@/public/icons/php-icon";
 import { ReactIcon } from "@/public/icons/react-icon";
 import { ReactnativeIcon } from "@/public/icons/reactNative-icon";
 import SpringIcon from "@/public/icons/springboot-icon";
+import StripeIcon from "@/public/icons/stripe-icon";
 import { SupabaseIcon } from "@/public/icons/supabase-icon";
 import { SwiftRoundedIcon } from "@/public/icons/swift-rounded-icon";
+import { TailwindIcon } from "@/public/icons/tailwind-icon";
 
 export type iconSVG = React.FunctionComponent<React.SVGProps<SVGSVGElement>>
 
@@ -89,16 +91,14 @@ export const trayectory: TrayectoryData[] = [
         company: "Sycket Technologies",
         position: "Desarrollador Fullstack",
         date: "Septiembre 2024 - Actualidad",
-        description: "En mi trabajo actual me dedico al mantenimiento y actualización de las aplicaciones de nuestro ecosistema Turbopos, pensando para todo tipo de negocios de hostelería, y creado en base a Kotlin, también me dedico a la creación de aplicaciones para kioscos de autoservicio y Web Apps personalizadas para cada cliente con Flutter. Cuando es necesario me dedico al mantenimiento y optimización de nuestra API backend creada con SpringBoot Framework de Java y MongoDB."
+        description: "Mantenimiento y actualización del ecosistéma Turbopos, pensado para todo tipo de negocio de hosteleria, desarrollado en Kotlin. Integración de plataformas de reparto como Glovo y Uber con nuestra API desarrollada con PHP y alojada en nuestro servidor Loopback (Node JS), actualmente integrando el sistema VeriFactu a nuestro sistema mediante un microservicio con SpringBoot." 
     },
     {
         id: 3,
         company: "Proxya (Actualmente Ayesa)",
         position: "Desarrollador Fullstack",
         date: "Marzo 2024 - Junio 2024",
-        description: "Mi primer empleo como programador (prácticas), en el que tuve la oportunidad de trabajar en un proyecto completamente nuevo para mi, PHP puro en el backend, HTML, CSS y algo de JS en el frontend."
-        + " Puedo decir, que junto a mi experiencia en Sycket, aquí fue donde más aprendí, ya que me enfrentaba a un lenguaje completamente nuevo, en un entorno de trabajo completamente diferente al que acostumbraba."
-        + " Siempre agradeceré a los compañeros que tuve allí, que siempre me apoyaron y me enseñaron todo lo que sabían asumiendo mi rol como becario, y haciéndome mejor profesional."
+        description: "Desarrollo del sistema de tickets interno para el proyecto APAE, desarrollado con HTML, CSS y PHP, también llevé a cabo la refactorización de código legacy del proyecto actualizando el código de PHP 4 a PHP 7. Apoyo en el backend del proyecto Gesuser optimizando la respuesta de las peticiones de la API con Python."
     }
 ]
 
@@ -128,29 +128,6 @@ export const projects: ProjectData[] = [
         slug: "am-peluqueros",
         hasGithub: true,
         webURL: null,
-        status: "Beta Testing"
-    },
-    {
-        title: "Conejos Ordoñez y Pons",
-        description: "Página web creada para el criadero de conejos Ordoñez y Pons, Creada con NextJS y Firebase, permitiendo a los dueños cambiar las fotos de los conejos cuando lo deseen mediante una herramienta personalizada",
-        author: "Lorenzo Garcia Garcia",
-        imageURL: `/img/conejos-ordonez-pons.jpg`,
-        technologies: [
-            {
-                name: "NextJS",
-                icon: NextjsIcon,
-                docURL: "https://nextjs.org/"
-            },
-            {
-                name: "Firebase",
-                icon: FirebaseIcon,
-                docURL: "https://firebase.google.com/"
-            }
-
-        ],
-        slug: "conejos-ordonez-y-pons",
-        webURL: "https://conejosordoñezypons.es",
-        hasGithub: false,
         status: "Finalizado"
     },
     {
@@ -189,6 +166,56 @@ export const projects: ProjectData[] = [
         webURL: null,
         slug: "nutrigest-api",
         status: "En desarrollo"
+    },
+    {
+        title: "MAACUU Glow",
+        description: "MAACU Glow es un panel de administración creado para la gestión de pedidos de una tienda de ropa de mujer, creada con NextJS e implementando Stripe como pasarela de pagos, permitiendo generar enlaces fácilmente para compartirlos con los clientes y gestionar los pedidos de manera sencilla.",
+        author: "Lorenzo Garcia Garcia",
+        imageURL: '/img/maacuglow-logo.png',
+        technologies: [
+            {
+                name: "NextJS",
+                icon: NextjsIcon,
+                docURL: "https://nextjs.org/"
+            },
+            {
+                name: "Stripe",
+                icon: StripeIcon,
+                docURL: "https://stripe.com/es"
+            },
+            {
+                name: "Tailwind CSS",
+                icon: TailwindIcon,
+                docURL: "https://tailwindcss.com/"
+            }
+        ],
+        slug: "maacuu-glow",
+        hasGithub: false,
+        webURL: "https://maacuuglow.es",
+        status: "Finalizado"
+    },
+    {
+        title: "Conejos Ordoñez y Pons",
+        description: "Página web creada para el criadero de conejos Ordoñez y Pons, Creada con NextJS y Firebase, permitiendo a los dueños cambiar las fotos de los conejos cuando lo deseen mediante una herramienta personalizada",
+        author: "Lorenzo Garcia Garcia",
+        imageURL: `/img/conejos-ordonez-pons.jpg`,
+        technologies: [
+            {
+                name: "NextJS",
+                icon: NextjsIcon,
+                docURL: "https://nextjs.org/"
+            },
+            {
+                name: "Firebase",
+                icon: FirebaseIcon,
+                docURL: "https://firebase.google.com/"
+            }
+
+        ],
+        slug: "conejos-ordonez-y-pons",
+        webURL: "https://conejosordoñezypons.es",
+        hasGithub: false,
+        status: "Finalizado"
     },
     {
         title: "Nutrigest (Versión antigua)",
