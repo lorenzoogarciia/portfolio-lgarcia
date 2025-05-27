@@ -88,13 +88,6 @@ export const trayectory: TrayectoryData[] = [
     },
     {
         id: 2,
-        company: "Sycket Technologies",
-        position: "Desarrollador Fullstack",
-        date: "Septiembre 2024 - Actualidad",
-        description: "Mantenimiento y actualización del ecosistéma Turbopos, pensado para todo tipo de negocio de hosteleria, desarrollado en Kotlin. Integración de plataformas de reparto como Glovo y Uber con nuestra API desarrollada con PHP y alojada en nuestro servidor Loopback (Node JS), actualmente integrando el sistema VeriFactu a nuestro sistema mediante un microservicio con SpringBoot." 
-    },
-    {
-        id: 3,
         company: "Proxya (Actualmente Ayesa)",
         position: "Desarrollador Fullstack",
         date: "Marzo 2024 - Junio 2024",

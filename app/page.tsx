@@ -61,14 +61,14 @@ export default function Home() {
                 })}
               </div>
               <div className="flex justify-center items-center mt-12">
-                <TransitionSend>
+                {/* <TransitionSend>
                   <a
                     href="/CV_LorenzoGarcia.pdf"
                     download="CV_Lorenzo_Garcia.pdf"
                     className="border-2 border-secondary text-secondary font-bold rounded-full p-4 transition hover:bg-secondary hover:text-primary duration-200 ease-in-out hover:scale-110">
                     Descargar CV
                   </a>
-                </TransitionSend>
+                </TransitionSend> */}
               </div>
             </div>
           </section>
