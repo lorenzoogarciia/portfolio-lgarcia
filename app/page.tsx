@@ -9,7 +9,7 @@ import TransitionWelcome from "./ui/animations/home/transition-welcome";
 import SkillsCarrousel from "./ui/animations/home/skills-carrousel";
 import TrayectoryCard from "./ui/home/trayectory-card";
 import StudyCard from "./ui/home/study-card";
-import TransitionSend from "./ui/animations/contact/transition-sendbutton";
+//import TransitionSend from "./ui/animations/contact/transition-sendbutton";
 
 export default function Home() {
 
